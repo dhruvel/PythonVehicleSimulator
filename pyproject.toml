@@ -1,3 +1,41 @@
 [build-system]
-requires = ["setuptools>=42"]
+requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "python_vehicle_simulator"
+version = "1.0.1"
+description = "The Python Vehicle Simulator supplements the MATLAB MSS toolbox."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+	{ name = "T. I. Fossen", email = "thor.fossen@ntnu.no" },
+]
+requires-python = ">=3.10"
+dependencies = [
+	"numpy",
+	"matplotlib",
+]
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: MIT License",
+	"Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/cybergalactic/PythonVehicleSimulator"
+"Bug Tracker" = "https://github.com/cybergalactic/PythonVehicleSimulator/issues"
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
