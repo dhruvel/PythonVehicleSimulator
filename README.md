@@ -33,32 +33,21 @@ For more information about the mathematical modeling of marine craft and methods
 T. I. Fossen (2021). Handbook of Marine Craft Hydrodynamics and Motion Control. 2nd. Edition, Wiley. 
 https://wiley.fossen.biz
 
-## Install:
-To run the main program ```main.py``` the following modules must be installed:
+## Install
+From the repository root, install the project and its development dependencies with:
 
-    numpy           https://numpy.org/install/
-    matplotlib      https://matplotlib.org/stable/users/installing.html
-    pytest          https://docs.pytest.org
+```sh
+uv sync --group dev
+```
 
-These dependencies will be automatically installed using the following command:
+Run the interactive simulator with:
 
-```pip install -e <path>```
+```sh
+uv run python -m python_vehicle_simulator.main
+```
 
-where ```<path>``` is the location of the downloaded or cloned PythonVehicleSimulator repository. 
+Run the test suite with:
 
-####Example:
-
-1. Go to [https://github.com/cybergalactic/PythonVehicleSimulator](https://github.com/cybergalactic/PythonVehicleSimulator)
-2. Click the green Code button and choose Download ZIP
-3. Extract the ZIP file (you’ll get a folder like PythonVehicleSimulator-main, which you can rename if desired).
-3. Open a terminal and run:
-```python3 -m pip install -e /MY_PATH/PythonVehicleSimulator-main`` 
-Replace /MY_PATH/ with the actual path on your system.
-
-**Note:** 
-The -e option installs the simulator in editable mode, allowing you to modify the source files and see changes immediately. If you omit -e, you can still run the program, but changes to the code won’t take effect until you reinstall the package.
-
-To run tests:
-
-	pip install pytest
-	pytest
+```sh
+uv run pytest
+```
